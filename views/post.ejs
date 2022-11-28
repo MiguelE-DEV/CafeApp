@@ -2,14 +2,14 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
-      <h2><%= post.name %></h2>
+      <h2 class="text-center"><%= post.name %></h2>
       <div class="row justify-content-between">
         <form
           class="col-1"
           action="/post/completePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+          <button class="btn btn-primary fa fa-check" type="submit"></button>
         </form>
         <h3 class="col-3">Status: <%= post.status %></h3>
         <%if(user.id == user.id){ %>
@@ -22,11 +22,12 @@
         <%}%>
       </div>
     </div>
-    <div class="col-3 mt-5">
-      <p><%= post.caption %></p>
-    </div>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-7 text-center">
+      <a class="btn btn-primary" href="/profile">Return to Profile</a>
+      <a class="btn btn-primary" href="/">Return to HomePage</a>
+      <a class="btn btn-primary" href="/feed">Return to Orders</a>
     </div>
   </div>
 </div>

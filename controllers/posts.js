@@ -4,8 +4,8 @@ const Post = require("../models/Post");
 module.exports = {
   getProfile: async (req, res) => {
     try {
-      // const posts = await Post.find({ user: req.user.id }); //find user that matches the logged in user
-      res.render("profile.ejs")//, { posts: posts, user: req.user });
+      const posts = await Post.find({ user: req.user.id }); //find user that matches the logged in user
+      res.render("profile.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -38,7 +38,7 @@ module.exports = {
         optionThree: req.body.optionThree,
         status: "Incomplete",
       });
-      console.log("Post has been added!");
+      console.log("An Order has been added!");
       res.redirect("/");
     } catch (err) {
       console.log(err);
@@ -46,10 +46,11 @@ module.exports = {
   },
   completePost: async (req, res) => {
     try {
+      const user = Post.find({ user: req.user.id });
       await Post.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $set: { user: req.user.id},
+          $set: { status: "Completed by:" + req.user.userName },
         }
       );
       console.log("Order Complete");

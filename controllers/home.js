@@ -1,5 +1,5 @@
 module.exports = {
   getHome: (req, res) => {
-    res.render("profile.ejs");
+    res.render("index.ejs");
   },
 };

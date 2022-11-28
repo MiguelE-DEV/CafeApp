@@ -9,7 +9,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 router.get("/:id", ensureAuth, postsController.getPost);
 
 //lets user create post w/ cloudinary for media upload
-router.post("/createPost", postsController.createPost);
+router.post("/createPost", upload.single("file"), postsController.createPost);
 
 //lets usre to like post. In controller uses post to update likes by 1
 router.put("/completePost/:id", postsController.completePost);
