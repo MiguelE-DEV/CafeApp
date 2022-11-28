@@ -47,6 +47,7 @@ module.exports = {
   completePost: async (req, res) => {
     try {
       const user = Post.find({ user: req.user.id });
+      
       await Post.findOneAndUpdate(
         { _id: req.params.id },
         {
