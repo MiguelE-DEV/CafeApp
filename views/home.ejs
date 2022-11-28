@@ -1,0 +1,25 @@
+<%- include('partials/header') -%>
+    <form action="/post/createPost" method="POST" id="post">
+        <select name="optionOne" id="optionOne">
+            <option value="food1">food1</option>
+            <option value="food2">food2</option>
+            <option value="food3">food3</option>
+        </select>
+        <select name="option" id="optionTwo">
+            <option value="drink1">drink1</option>
+            <option value="drink2">drink2</option>
+            <option value="drink3">drink3</option>
+        </select>
+        <select name="optionThree" id="optionThree">
+            <option value="side1">side1</option>
+            <option value="side2">side2</option>
+            <option value="side3">side3</option>
+        </select>
+        <div class="form-group">
+            <label for="name" class="text-light">Please enter a Name for the order</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="John Doe">
+        </div>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+<%- include('partials/footer') -%>
