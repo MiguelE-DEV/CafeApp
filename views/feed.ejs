@@ -5,10 +5,13 @@
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/post/<%= posts[i]._id%>">
-              <span><%= posts[i].name%></span>
+            <span><%= posts[i].name%></span>
             </a>
+            <p><%= posts[i].optionOne%></p>
+            <p><%= posts[i].optionTwo%></p>
+            <p><%= posts[i].optionThree%></p>
+            <span><%= posts[i].status%></span>
           </li>
-          <span><%= posts[i].status%></span>
         <% } %>
         </ul>
     </div>
